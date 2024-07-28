@@ -1,4 +1,4 @@
-# Document Chatbot
+# DocuBot by 3B
 
 Welcome to the Document Chatbot! This app allows you to interact with your documents using an AI-powered chatbot.
 
