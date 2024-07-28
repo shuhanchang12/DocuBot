@@ -57,8 +57,8 @@ if 'messages' not in st.session_state:
 st.title("Chat with your Documents 📝")
 st.write("Upload your PDF documents and have conversation with them")
 
-# Display social profile links with icons
-st.markdown("""
+# Add social profile links with icons to the sidebar
+st.sidebar.markdown("""
     ## Connect with me:
     <a href="https://topmate.io/muhammad_saqib/" target="_blank"><img src="https://img.icons8.com/ios/50/000000/topmate.png" alt="Topmate" style="width:30px;height:30px;"></a>
     <a href="https://www.linkedin.com/in/muhammad-saqib-genai/" target="_blank"><img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png" alt="LinkedIn" style="width:30px;height:30px;"></a>
