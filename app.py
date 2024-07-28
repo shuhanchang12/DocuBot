@@ -43,6 +43,12 @@ def extract_text_from_pdf(pdf_file):
         text += page.extract_text()
     return text
 
+# Social profile links
+topmate_link = "https://topmate.io/muhammad_saqib/"
+linkedin_link = "https://www.linkedin.com/in/muhammad-saqib-genai/"
+github_link = "https://github.com/MuhammadSaqib001"
+medium_link = "https://medium.com/@saqibbuzdar"
+
 st.set_page_config(page_title="DocuBot by 3B", layout="wide", page_icon='📚')
 
 if 'messages' not in st.session_state:
@@ -50,6 +56,15 @@ if 'messages' not in st.session_state:
 
 st.title("Chat with your Documents 📝")
 st.write("Upload your PDF documents and have conversation with them")
+
+# Display social profile links with icons
+st.markdown("""
+    ## Connect with me:
+    <a href="https://topmate.io/muhammad_saqib/" target="_blank"><img src="https://img.icons8.com/ios/50/000000/topmate.png" alt="Topmate" style="width:30px;height:30px;"></a>
+    <a href="https://www.linkedin.com/in/muhammad-saqib-genai/" target="_blank"><img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png" alt="LinkedIn" style="width:30px;height:30px;"></a>
+    <a href="https://github.com/MuhammadSaqib001" target="_blank"><img src="https://img.icons8.com/ios-glyphs/50/000000/github.png" alt="GitHub" style="width:30px;height:30px;"></a>
+    <a href="https://medium.com/@saqibbuzdar" target="_blank"><img src="https://img.icons8.com/ios-filled/50/000000/medium-new.png" alt="Medium" style="width:30px;height:30px;"></a>
+    """, unsafe_allow_html=True)
 
 uploaded_file = st.file_uploader("Upload PDF document to chat with", type=["pdf"], key='pdf')
 
@@ -64,7 +79,6 @@ elif not uploaded_file:
     if 'resume_content' in st.session_state:
         del st.session_state.resume_content
 
-
 input_and_chat, pdf_preview = st.columns([1, 0.9])
 with input_and_chat:
     if uploaded_file:
@@ -78,10 +92,10 @@ with input_and_chat:
                         results = pdf_chat_client.answer_question(st.session_state.resume_content, prompt, messages_to_string(st.session_state.messages))
                         st.session_state.messages += [{'role': 'user', 'message': prompt}]
                         st.session_state.messages += [{'role': 'assistant', 'message': results}]
-                        display_chat_history(chat_container,st.session_state.messages[-2:])
+                        display_chat_history(chat_container, st.session_state.messages[-2:])
 
 if st.session_state.pdf_ref:
     with pdf_preview:
-        with st.expander('PDF Preview',expanded=True):
+        with st.expander('PDF Preview', expanded=True):
             binary_data = st.session_state.pdf_ref.getvalue()
-            pdf_viewer(input=binary_data,height=800)
+            pdf_viewer(input=binary_data, height=800)
