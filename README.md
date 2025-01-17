@@ -1,8 +1,6 @@
-# DocuBot by 3B
+# DocuBot
 
 Welcome to the Document Chatbot! This app allows you to interact with your documents using an AI-powered chatbot.
-
-Deployed at: [https://resume-answering-chatbot.streamlit.app/](https://resume-answering-chatbot.streamlit.app/)
 
 ## Features
 
