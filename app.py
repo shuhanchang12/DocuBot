@@ -59,7 +59,7 @@ st.write("Upload your PDF documents and have conversation with them")
 
 # Add social profile links with colored icons to the sidebar
 st.sidebar.markdown("App Name :- ",unsafe_allow_html=True)
-st.sidebar.code("DocuBot by 3B")
+st.sidebar.code("DocuBot by Cortex Dive")
 
 st.sidebar.markdown("Created by :- ",unsafe_allow_html=True)
 st.sidebar.code("Muhammad Saqib")
@@ -69,7 +69,7 @@ st.sidebar.markdown("""
     <a href="https://topmate.io/muhammad_saqib/" target="_blank"><img src="https://topmate.io/favicon.svg" alt="Topmate" style="width:30px;height:30px;"></a>
     <a href="https://www.linkedin.com/in/muhammad-saqib-genai/" target="_blank"><img src="https://img.icons8.com/color/50/000000/linkedin.png" alt="LinkedIn" style="width:30px;height:30px;"></a>
     <a href="https://github.com/MuhammadSaqib001" target="_blank"><img src="https://img.icons8.com/color/50/000000/github--v1.png" alt="GitHub" style="width:30px;height:30px;"></a>
-    <a href="https://medium.com/@saqibbuzdar" target="_blank"><img src="https://img.icons8.com/color/50/000000/medium-monogram.png" alt="Medium" style="width:30px;height:30px;"></a>
+    <a href="https://cortexdive.com" target="_blank"><img src="https://cortexdive.com/wp-content/uploads/2024/11/CORTEX-DIVE-860-x-480-px.png" alt="Portfolio" style="width:30px;height:30px;"></a>
     """, unsafe_allow_html=True)
 
 uploaded_file = st.file_uploader("Upload PDF document to chat with", type=["pdf"], key='pdf')
